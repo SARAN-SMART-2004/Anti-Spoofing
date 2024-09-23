@@ -45,7 +45,7 @@ while True:
                 if y < 0: y = 0
                 if w < 0: w = 0
                 if h < 0: h = 0
-
+                #finding my blur
                 imgFace = img[y:y + h, x:x + w]
                 cv2.imshow("Face", imgFace)
                 blurValue = int(cv2.Laplacian(imgFace, cv2.CV_64F).var())
@@ -53,7 +53,7 @@ while True:
                     listBlur.append(True)
                 else:
                     listBlur.append(False)
-
+                #normalize the value
                 ih, iw, _ = img.shape
                 xc, yc = x + w / 2, y + h / 2
                 xcn, ycn = round(xc / iw, floatingPoint), round(yc / ih, floatingPoint)
@@ -65,7 +65,7 @@ while True:
                 if hn > 1: hn = 1
 
                 listInfo.append(f"{classID} {xcn} {ycn} {wn} {hn}\n")
-
+                #draw
                 cv2.rectangle(imgOut, (x, y, w, h), (255, 0, 0), 3)
                 cvzone.putTextRect(imgOut, f'Score: {int(score * 100)}% Blur: {blurValue}', (x, y - 0),scale=2, thickness=3)
                 if debug:

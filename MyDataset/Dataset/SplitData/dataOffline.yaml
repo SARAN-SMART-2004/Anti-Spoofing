@@ -1,0 +1,7 @@
+path: D:\duauiugygygyffyyydyfdyfdydfdfdf\project_root - Copy\Dataset\SplitData
+train:  D:\duauiugygygyffyyydyfdyfdydfdfdf\project_root - Copy\Dataset\SplitData\train\images
+val:  D:\duauiugygygyffyyydyfdyfdydfdfdf\project_root - Copy\Dataset\SplitData\val\images
+test:  D:\duauiugygygyffyyydyfdyfdydfdfdf\project_root - Copy\Dataset\SplitData\test\images
+
+nc: 2
+names: ['fake', 'real']
